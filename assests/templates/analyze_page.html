@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+    background: url("{% static 'admin.png' %}");
+    background-size:100%100%;
+    }
+    .menu table{
+          width:100%;
+          text-align:center;
+     }
+          .menu table td:hover{
+          background:rgb(0,0,0);
+
+          }
+          .menu table td{
+          background: #584b4f;
+         }
+          .menu table,.menu table th,.menu table td {
+    border: ;
+    border-collapse: collapse;
+
+}
+.menu table th,.menu table  td {
+    padding: 15px;
+
+    }
+    .topic h1{
+          color:white;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+            }
+                .giver
+          {
+          color: darkgrey;
+          font-family: cooper;
+          padding: 50px;
+          width:50%;
+          text-align:center;
+
+
+
+          }
+
+table1 {
+
+    border-collapse: collapse;
+    width: 100%;
+}
+ td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+ th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+.image1
+{
+    background:url("{% static 'analyse.png' %}");
+       background-size: 100% 100%;
+    height: 400px;
+    width: 400px;
+    margin-left: 811px;
+    margin-top: -123px;
+    }
+
+    </style>
+</head>
+<body style="background-color:#393e44">
+
+<div class="topic">
+    <h1 style="margin-top:10px;margin-left:60px;border-style:none;width:1300px;height:40px;border-color:black;background:;">A User-Centric Machine Learning Framework for
+Cyber Security Operations Center</h1></div>
+<div class="menu">
+        <table>
+            <tr>
+
+                <td><a  style="color:violet; font-family:cooper; text-decoration:none;" href="{% url 'mydetails' %} "> MY DETAILS </a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'update' %}" > UPDATE DETAILS</a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'analyze_page' %}"> ANALYZE PAGE</a></td>
+                <td><a style="color:violet;font-family:cooper; text-decoration: none;" href="{% url 'giver_transaction' %}">TRANSACTION</a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'receivealert' %}"> RECEIVE ALERT</a></td>
+                <td><a style="color:violet; font-family:cooper; text-decoration: none; " href="{% url 'logout_page' %}">LOGOUT</a></td>
+
+
+            </tr>
+        </table>
+    </div>
+
+<h1 style="color:white; margin-left: 600px;">Analyze_Page</h1>
+<div class="table1">
+<table class="giver">
+    <tr style="border-style:groove">
+        <th>NAME</th>
+        <th>DATE</th>
+        <th>TIME</th>
+        <th>TRANSACTION</th>
+
+    </tr>
+    {% for g in objv %}
+    <tr>
+        <td class="td">{{g.name}}</td>
+        <td class="td">{{g.date}}</td>
+        <td class="td">{{g.time}}</td>
+        <td class="td">{{g.amount}}</td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+</div>
+<div class="image1">
+
+</div>
+</body>
+</html>

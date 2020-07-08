@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOC(security operation center)</title>
+    <style>
+        body{
+         background: url("{% static 'admin.png' %}");
+         background-size: cover;
+        }
+        .login
+        {
+         margin-left: 300px;
+         margin-top: 193px;
+         font-family: cooper;
+         color: darkgrey;
+         font-size: 20px;
+        }
+        .border
+        {
+         border-radius:10px;
+         padding:5px;
+        }
+
+input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 5px 5px;
+    font-family:cooper;
+    background-color: unset;
+    color:white;
+}
+.topic h1{
+          color:white;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+            }
+.image1{
+     background: url("{% static 'admin5.png' %}");
+     background-size:100% 100%;
+     height: 380px;
+     width: 387px;
+     margin-top: -282px;
+}
+
+    </style>
+</head>
+<body >
+<div class="topic">
+    <h1 style="margin-top:-169px;margin-left:60px;border-style:none;width:1300px;height:40px;border-color:black;background:;">Cyber Security Operations Center</h1></div>
+<div class="login">
+<form method="POST">
+    {% csrf_token %}
+    <div class="login">
+        SOC:<br/>
+        <input type="text" name="admin" value="" class="border" ><br><br/>
+        Password:<br/>
+        <input type="password" name="password" value="" class="border"><br/><br/>
+
+        <input type="submit" name="login" value="LOGIN" class="border" ><br><br/><br/>
+
+    </div>
+</form></div>
+<div class="image1">
+
+</div>
+</body>
+</html>

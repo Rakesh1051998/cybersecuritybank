@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background: url("{% static 'admin.png' %}");
+        background-size:cover;
+        }
+    .topic h1{
+        color:white;
+        padding:2px;
+        text-align:center;
+        border-style:none;
+        height:100px;
+        width:px;
+        float:;
+        }
+.login
+        {
+        font-family: cooper;
+        color: darkgrey;
+        font-size: 20px;
+        margin-left: 600px;
+        margin-top: 100px;
+        }
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    padding:10px;
+}
+
+ .image1
+{
+    background:url("{% static 'warning.png' %}");
+    background-size:100% 100%;
+    height: 300px;
+    width: 400px;
+    float: right;
+    margin-top: -250px;
+}
+
+.image2
+{
+    background:url("{% static 'warning.png' %}");
+    background-size:100% 100%;
+    height: 300px;
+    width: 400px;
+    float: left;
+    margin-top: -250px;
+}
+
+ .menu table{
+          width:100%;
+          text-align:center;
+
+          }
+          .menu table td:hover{
+          background:rgb(0,0,0);
+
+          }
+          .menu table td{
+          background: #584b4f;
+         }
+          .menu table,.menu table th,.menu table td {
+    border: ;
+    border-collapse: collapse;
+
+}
+.menu table th,.menu table  td {
+    padding: 15px;
+
+    }
+   </style>
+<body>
+<div class="topic">
+    <h1 style="margin-top:px;margin-left:60px;border-style:none;width:1300px;height:40px;border-color:black;background:;">Cyber Security Operations Center</h1>
+</div>
+
+<div class="menu">
+        <table>
+            <tr>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'analyze' %}"> ANALYZE PAGE</a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'riskuser' %}"> RISK USERS</a></td>
+                <td><a style="color:violet;font-family:cooper; text-decoration: none;"  href="{% url 'charts' 'pie' %}">CHART</a></td>
+                <td><a style="color:violet; font-family:cooper; text-decoration: none; " href="{% url 'adlogout' %}">LOGOUT</a></td>
+            </tr>
+        </table>
+    </div>
+
+ <div class="login" style="" >
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                NAME:<br/>
+                <input type="text" name="name1"><br/>
+            </td>
+        </tr>
+    <tr>
+        <td>
+            SEND MESSAGE:<br/>
+            <input type="text" name="name" ><br/>
+        </td>
+    </tr>
+        <tr>
+        <td style="text-align:center;" colspan="2"><input type="submit" name="TRANSACTION" value="TRANSACTION" class="space"></td>
+        </tr>
+</table>
+    </form>
+ </div>
+<div class="image1">
+
+</div>
+<div class="image2">
+
+</div>
+</body>
+</html>

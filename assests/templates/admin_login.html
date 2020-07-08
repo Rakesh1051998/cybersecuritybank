@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin_Login</title>
+    <style>
+        body{
+         background: url("{% static 'admin.png' %}");
+
+
+        background-size: cover;
+        }
+        .login
+        {
+       margin-left: 300px;
+       margin-top: 150px;
+       font-family: cooper;
+       color: darkgrey;
+       font-size: 20px;
+        }
+        .border
+        {
+        border-radius:10px;
+        padding:5px;
+        }
+
+input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 5px 5px;
+    font-family:cooper;
+    background-color: unset;
+    color:white;
+}
+.message
+{
+margin-right: 250px;
+color: orange;
+}
+.topic h1{
+          color:white;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+            }
+.image1{
+          background: url("{% static 'python.png' %}");
+              background-size: 100% 100%;
+            width: 500px;
+        height: 300px;
+             margin-top: -358px;
+}
+
+    </style>
+</head>
+<body >
+<div class="topic">
+    <h1 style="margin-top:-100px;margin-left:60px;border-style:none;width:1300px;height:40px;border-color:black;background:;">A User-Centric Machine Learning Framework for
+Cyber Security Operations Center</h1></div>
+<div class="login">
+<form method="POST">
+    {% csrf_token %}
+    <div class="login" style="" >
+        USERNAME:<br/>
+        <input type="text" name="name" value="" class="border" ><br><br/>
+        PASSWORD:<br/>
+        <input type="password" name="password" value="" class="border"><br/><br/>
+
+        <input type="image" src="static/login.png" width="110" hight="70" name="login" value="LOGIN" ><br><p>Don't have an account?</p>
+        <a href="admin_register" style="font-family:cooper; color:darkgrey; padding:px" ><img src="static/signup.png" width="100" hight="70"></a>
+    </div><br><br>
+    <center class="message">
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+    </center>
+</form></div>
+<div class="image1">
+
+</div>
+</body>
+</html>

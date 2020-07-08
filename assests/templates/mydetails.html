@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+     background: url("{% static 'admin1.jpg' %}");
+        background-size: cover;
+    }
+        .menu table{
+          width:100%;
+          text-align:center;
+
+          }
+        .menu table td:hover{
+          background:rgb(0,0,0);
+
+          }
+        .menu table td{
+          background: #584b4f;
+         }
+        .menu table,.menu table th,.menu table td {
+           border: ;
+            border-collapse: collapse;
+
+}
+         .menu table th,.menu table  td {
+                 padding: 15px;
+
+    }
+
+
+          .topic h1{
+          color:white;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+}
+          .giver
+          {
+          color: darkgrey;
+          font-family: cooper;
+          padding: 50px;
+          margin-right: 500px;
+          }
+         input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 5px 5px;
+    border-radius:10px;
+    margin-bottom:10px;
+    padding: 6px;
+}
+
+</style>
+</head>
+<body style="background-color:#393e44">
+<div class="topic"><h1 style="margin-top:10px;margin-left:60px;border-style:none;width:1300px;height:40px;border-color:black;background:;">A User-Centric Machine Learning Framework for
+Cyber Security Operations Center</h1></div>
+<div class="menu">
+        <table>
+            <tr>
+
+                <td><a  style="color:violet; font-family:cooper; text-decoration:none;" href="{% url 'mydetails' %} "> MY DETAILS </a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'update' %} " > UPDATE DETAILS</a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'analyze_page' %}"> ANALYZE PAGE</a></td>
+                <td><a style="color:violet;font-family:cooper; text-decoration: none;" href="{% url 'giver_transaction' %}">TRANSACTION</a></td>
+                <td><a  style="color:violet; font-family:cooper; text-decoration: none;" href="{% url 'receivealert' %}"> RECEIVE ALERT</a></td>
+                <td><a style="color:violet; font-family:cooper; text-decoration: none; " href="{% url 'logout_page' %}">LOGOUT</a></td>
+
+
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+<div class="giver">
+<form method="POST" >
+
+    {%csrf_token%}
+    <table align="right">
+
+
+         <tr>
+            <td>Admin Id</td>
+            <td><input type="text" name="adminid" value="{{objc.adminid}}" readonly class="big" ></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" value="{{objc.name}}" readonly  class="big"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" value="{{objc.email}}" readonly class="big" ></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" name="password" value="{{objc.password}}" readonly class="big" ></td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td><input type="text" name="Number" value="{{objc.phoneno}}" readonly class="big" ></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" name="Address" value="{{objc.address}}" readonly class="big"></td>
+        </tr>
+
+    </table>
+
+</form>
+    </div>
+
+</body>
+</html>

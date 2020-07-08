@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "CYBER"
+	},
+	data: [{
+	{% if chart_type == "bar" %}
+		type: "bar",
+	{% elif chart_type == "pie" %}
+		type: "pie",
+	{% elif chart_type == "spline" %}
+		type: "spline",
+	{% endif %}
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+		{% for o in form %}
+			{y: {{o.dcount}}, label: "{{o.month}}"},
+		{% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+</head>
+<body>
+
+{% for o in form %}
+			{{o}}
+		{% endfor %}
+<div class="sidemenu">
+    <h2 style="color:black;margin-left:60px;margin-top:80px"><a href="{% url 'viewer' 'pie' %}" style="color:black;text-decoration:none">BAR CHAERT</a></h2>
+    <h2 style="color:white;margin-left:60px;margin-top:100px;"><a href="{% url 'viewer' 'bar' %}" style="color:black;text-decoration:none">PIE CHART</a></h2>
+    <h2 style="color:white;margin-left:60px;margin-top:100px;"><a href="{% url 'viewer' 'coloumn' %}"style="color:black;text-decoration:none">COLOUMN CHART</a></h2>
+</div>
+<div id="chartContainer" class="graph"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
